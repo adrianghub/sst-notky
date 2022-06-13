@@ -1,6 +1,6 @@
 # sst-notky
 
-### This project is based on SST (ServerlessStack).
+### This project is based on SST (ServerlessStack Framework).
 
 SST makes it easy to build serverless applications by allowing developers to:
 1. Define their infrastructure using AWS CDK
@@ -55,17 +55,12 @@ There are a few reasons why serverless apps are favored over traditional server 
 
 The biggest benefit by far is that one only need to worry about the code and nothing else. And of course frontend is a simple static single page app that is almost guaranteed to always respond instantly thanks to CloudFront.
 
-Serverless computing (or serverless for short), is an execution model where the cloud provider (AWS,
-Azure, or Google Cloud) is responsible for executing a piece of code by dynamically allocating the
-resources. And only charging for the amount of resources used to run the code.
-The code is typically run inside stateless containers that can be triggered by a variety of events including http requests,
-database events, queuing services, monitoring alerts, file uploads, scheduled events (cron jobs), etc.
-The code that is sent to the cloud provider for execution is usually in the form of a function. Hence
-serverless is sometimes referred to as “Functions as a Service” or “FaaS”. Following are the FaaS
-offerings of the major cloud providers, such as [AWS Lambda](https://aws.amazon.com/lambda/).
+Serverless computing (or serverless for short), is an execution model where the cloud provider (AWS, Azure, or Google Cloud) is responsible for executing a piece of code by dynamically allocating the resources. And only charging for the amount of resources used to run the code. The code is typically run inside stateless containers that can be triggered by a variety of events including http requests, database events, queuing services, monitoring alerts, file uploads, scheduled events (cron jobs), etc. The code that is sent to the cloud provider for execution is usually in the form of a function. Hence serverless is sometimes referred to as “Functions as a Service” or “FaaS”. Following are the FaaS offerings of the major cloud providers, such as [AWS Lambda](https://aws.amazon.com/lambda/).
 
 AWS Lambda (or Lambda for short) is a serverless computing service provided by AWS.
 
-Lambda functions need to be packaged and sent to AWS. This is usually a process of compressing the
-function and all its dependencies and uploading it to an S3 bucket. And letting AWS know that you
-want to use this package when a specific event takes place.
+Lambda functions need to be packaged and sent to AWS. This is usually a process of compressing the function and all its dependencies and uploading it to an S3 bucket. And letting AWS know that you want to use this package when a specific event takes place.
+
+SST converts infrastructure code into a CloudFormation template.
+This is a description of the infrastructure that one is trying to configure as a part of your serverless project (ex. Lambda functions, API Gateway endpoints, DynamoDB tables, S3 buckets, etc.).
+CloudFormation is an AWS service that takes a template (written in JSON or YAML), and provisions your resources based on that.
