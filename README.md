@@ -64,3 +64,33 @@ Lambda functions need to be packaged and sent to AWS. This is usually a process 
 SST converts infrastructure code into a CloudFormation template.
 This is a description of the infrastructure that one is trying to configure as a part of your serverless project (ex. Lambda functions, API Gateway endpoints, DynamoDB tables, S3 buckets, etc.).
 CloudFormation is an AWS service that takes a template (written in JSON or YAML), and provisions your resources based on that.
+
+AWS CDK (Cloud Development Kit), released in Developer Preview back in August 2018; allows you to
+use TypeScript, JavaScript, Java, .NET, and Python to create AWS infrastructure.
+
+```
+// CloudFormation Template Example (YAML)
+- Resources:
+- NotesTable:
+- Type: AWS::DynamoDB::Table
+- Properties:
+- TableName: ${self:custom.tableName}
+- AttributeDefinitions:
+- - AttributeName: userId
+- AttributeType: S
+- - AttributeName: noteId
+- AttributeType: S
+- KeySchema:
+- - AttributeName: userId
+- KeyType: HASH
+- - AttributeName: noteId
+- KeyType: RANGE
+- BillingMode: PAY_PER_REQUEST
+
+// AWS CDK (JS)
++ const table = new dynamodb.Table(this, "notes", {
++ partitionKey: { name: "userId", type: dynamodb.AttributeType.STRING },
++ sortKey: { name: "noteId", type: dynamodb.AttributeType.STRING },
++ billingMode: dynamodb.BillingMode.PAY_PER_REQUEST,
++ });
+```
