@@ -1,5 +1,18 @@
 # sst-notky
 
+### This project is based on SST (ServerlessStack).
+
+SST makes it easy to build serverless applications by allowing developers to:
+1. Define their infrastructure using AWS CDK
+2. Test their applications live using Live Lambda Development
+3. Set breakpoints and debug in Visual Studio Code
+4. Web based dashboard to manage your apps
+5. Deploy to multiple environments and regions
+6. Use higher-level constructs designed specifically for serverless apps
+7. Configure Lambda functions with JS and TS (using esbuild), Go, Python, C#, and F#
+
+### To do
+
 [BED]
 * Configure AWS account
 * Create database using DynamoDB
