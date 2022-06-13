@@ -94,3 +94,19 @@ use TypeScript, JavaScript, Java, .NET, and Python to create AWS infrastructure.
 + billingMode: dynamodb.BillingMode.PAY_PER_REQUEST,
 + });
 ```
+CDK internally uses CloudFormation. It converts your code into a CloudFormation template. So in the
+above example, you write the code at the bottom and it generates the CloudFormation template at
+the top.
+
+A CDK app is made up of multiple stacks. Or more specifically, multiple instances of the *cdk.Stack
+class*. While these do get converted into CloudFormation stacks down the road, it’s more appropriate
+to think of them as representations of your CloudFormation stacks, but in code.
+
+`cdk synth` - converts these stacks into CloudFormation templates.
+`cdk deploy` - submit these to CloudFormation. CloudFormation creates these stacks and all
+the resources that are defined in them.
+
+SST comes with a list of higher-level CDK constructs designed to make it easy to build serverless apps.
+
+`sst build`, - runs `cdk synth` internally
+`npm start` or `npm run deploy` - runs `cdk deploy`
