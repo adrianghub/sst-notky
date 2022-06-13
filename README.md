@@ -14,7 +14,7 @@ SST makes it easy to build serverless applications by allowing developers to:
 ### To do
 
 [BED]
-* Configure AWS account
+* ~~Configure AWS account~~
 * Create database using DynamoDB
 * Set up S3 for file uploads
 * Write the various backend APIs
