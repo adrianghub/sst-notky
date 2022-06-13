@@ -34,6 +34,14 @@ Main issue solved going serverless? Responsibility.
 4. As usage scales devs need to manage scaling up server as well. And as a result manage
 scaling it down when we don’t have as much usage.
 
+There are a few reasons why serverless apps are favored over traditional server hosted apps:
+
+1. Low maintenance - not having any servers to manage
+2. Low cost - effectively only paying per request
+3. Easy to scale - thanks in part to DynamoDB which gives near infinite scale and Lambda that simply scales up to meet the demand
+
+The biggest benefit by far is that one only need to worry about the code and nothing else. And of course frontend is a simple static single page app that is almost guaranteed to always respond instantly thanks to CloudFront.
+
 Serverless computing (or serverless for short), is an execution model where the cloud provider (AWS,
 Azure, or Google Cloud) is responsible for executing a piece of code by dynamically allocating the
 resources. And only charging for the amount of resources used to run the code.
