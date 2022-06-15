@@ -1,10 +1,10 @@
 {
-  "name": "@@@app/backend",
+  "name": "@notes/api",
   "version": "0.0.0",
   "type": "module",
   "scripts": {},
   "dependencies": {
-    "aws-sdk": "^2.1153.0"
+    "aws-sdk": "^2.1155.0"
   },
   "devDependencies": {
     "@types/aws-lambda": "^8.10.100"
